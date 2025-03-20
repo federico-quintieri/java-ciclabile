@@ -1,5 +1,7 @@
 package org.lesson.jvc;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -11,6 +13,19 @@ public class Main {
 
         while (intero.hasAncoraElementi()) {
             System.out.println(intero.getElementoSuccessivo());
+        }
+
+        // Faccio oggetto di classe Interi senza passare array
+        Interi emptyIntero = new Interi();
+
+        for (int i = 0; i < 50; i++) {
+            // Riempio l'array con 50 numeri randoms
+            Random random = new Random();
+            emptyIntero.addElemento(random.nextInt());
+        }
+
+        while (emptyIntero.hasAncoraElementi()) {
+            System.out.println(emptyIntero.getElementoSuccessivo());
         }
 
     }
